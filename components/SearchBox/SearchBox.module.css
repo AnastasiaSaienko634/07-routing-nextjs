@@ -1,9 +1,25 @@
 .input {
   flex: 1;
-  max-width: 240px;
-  padding: 6px 12px;
-  font-size: 16px;
-  border: 1px solid #ced4da;
-  border-radius: 4px;
+  max-width: 280px;
+  padding: 10px 14px;
+  font-size: 15px;
+  border: 1px solid #d0d7de;
+  border-radius: 8px;
+  background: #fdfdfd;
   margin-left: 70px;
+  transition: border 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+/* Fokus-Effekt */
+.input:focus {
+  outline: none;
+  border-color: #b6d4fe;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px #e7f1ff;
+}
+
+/* Placeholder Style */
+.input::placeholder {
+  color: #9a9a9a;
+  font-size: 14px;
 }

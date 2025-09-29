@@ -1,57 +1,48 @@
 .list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 16px;
+  gap: 20px;
   padding: 0;
   margin: 0;
   list-style: none;
 }
 
 .listItem {
-  background-color: #ffffff;
-  border: 1px solid #dee2e6;
-  border-radius: 8px;
-  padding: 16px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  background: #ffffff;
+  border: 1px solid #e5e8ec;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 180px;
+  min-height: 200px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.listItem:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
 }
 
 .title {
   font-size: 18px;
   font-weight: 600;
-  margin: 0 0 8px 0;
-  color: #212529;
+  margin: 0 0 10px 0;
+  color: #2c2c2c;
 }
 
 .content {
   margin: 0;
   flex-grow: 1;
   font-size: 14px;
-  color: #495057;
-  margin-bottom: 12px;
+  line-height: 1.5;
+  color: #555;
+  margin-bottom: 14px;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
-}
-
-.button {
-  align-self: flex-end;
-  padding: 6px 12px;
-  font-size: 14px;
-  color: #fff;
-  background-color: #dc3545;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-.button:hover {
-  background-color: #bb2d3b;
 }
 
 .footer {
@@ -61,34 +52,67 @@
   margin-top: auto;
 }
 
+/* Pastell-Tags */
 .tag {
   display: inline-block;
-  padding: 4px 8px;
+  padding: 5px 10px;
   font-size: 12px;
-  color: #0d6efd;
+  color: #2a5d9f;
   background-color: #e7f1ff;
-  border: 1px solid #b6d4fe;
-  border-radius: 12px;
-  max-width: 100px;
+  border: 1px solid #c5dcfa;
+  border-radius: 16px;
+  max-width: 120px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-weight: 500;
 }
 
-.link {
-  align-self: flex-end;
+/* Delete Button mit Icon-Support */
+.button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
   padding: 6px 12px;
   font-size: 14px;
   color: #fff;
-  background-color: #0d6efd; /* синій колір */
+  background-color: #f28b82; /* sanftes Rot */
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.button:hover {
+  background-color: #e57373;
+  transform: translateY(-2px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Link Button (z. B. "View" oder "Edit") */
+.link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #82b1f3; /* sanftes Blau */
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
   text-decoration: none;
-  display: inline-block;
-  transition: background-color 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .link:hover {
-  background-color: #0b5ed7;
+  background-color: #5a97ea;
+  transform: translateY(-2px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Icons innerhalb der Buttons */
+.icon {
+  font-size: 16px;
+  flex-shrink: 0;
 }

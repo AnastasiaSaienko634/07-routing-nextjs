@@ -4,7 +4,13 @@
   padding: 28px;
   background-color: #ffffff;
   border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.container:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
 }
 
 .item {
@@ -17,14 +23,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 2px solid #f2f2f2;
+  border-bottom: 2px solid #f0f0f0;
   padding-bottom: 12px;
 }
 
 .header h2 {
   margin: 0;
   font-size: 26px;
-  color: #2d2d2d;
+  color: #2c2c2c;
   font-weight: 600;
 }
 
@@ -42,14 +48,18 @@
   font-style: italic;
 }
 
+/* Tags mit Pastell-Varianten */
 .tag {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px; /* Platz für Icon + Text */
   padding: 6px 14px;
   font-size: 13px;
   border-radius: 20px;
   font-weight: 500;
-  max-width: 120px;
+  max-width: 140px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  transition: background 0.2s ease, color 0.2s ease;
 }
