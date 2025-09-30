@@ -1,7 +1,8 @@
 import Link from "next/link";
 import React from "react";
-import { FiHome, FiBookOpen } from "react-icons/fi";
+import { FiHome } from "react-icons/fi";
 import css from "./Header.module.css";
+import TagsMenu from "../TagsMenu/TagsMenu";
 
 const Header = () => {
   return (
@@ -17,9 +18,7 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <Link href="/notes" className={css.navLink}>
-              <FiBookOpen className={css.icon} /> Notes
-            </Link>
+            <TagsMenu />
           </li>
         </ul>
       </nav>
