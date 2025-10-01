@@ -25,13 +25,15 @@ const VITE_NOTEHUB_TOKEN = process.env.NEXT_PUBLIC_NOTEHUB_TOKEN;
 
 export const fetchNotes = async (
   query: string,
-  currentPage: number
+  currentPage: number,
+  tag?: string
 ): Promise<FetchNotesResponse> => {
   const response = await axios.get<FetchNotesResponse>("/notes", {
     params: {
       search: query,
       page: currentPage,
       perPage: 10,
+      tag: tag,
     },
     headers: {
       Authorization: `Bearer ${VITE_NOTEHUB_TOKEN}`,

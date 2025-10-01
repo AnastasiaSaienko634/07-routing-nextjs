@@ -5,7 +5,7 @@ import { useParams } from "next/navigation";
 import Loader from "@/components/Loader/Loader";
 import ErrorMessage from "@/components/ErrorMessage/ErrorMessage";
 import css from "./NoteDetails.module.css";
-
+import { useRouter } from "next/navigation";
 const NoteDetails = () => {
   const { id } = useParams<{ id: string }>();
   const { data, isLoading, isError } = useQuery({
@@ -13,6 +13,12 @@ const NoteDetails = () => {
     queryFn: () => fetchNoteById(id),
     refetchOnMount: false,
   });
+
+  const router = useRouter();
+
+  const handleClick = () => {
+    router.back();
+  };
 
   const formattedDate = data
     ? data.updatedAt
@@ -27,6 +33,7 @@ const NoteDetails = () => {
     <div className={css.container}>
       <div className={css.item}>
         <div className={css.header}>
+          <button onClick={handleClick}>Go Back</button>
           <h2>{data.title}</h2>
         </div>
         <p className={css.content}>{data.content}</p>
