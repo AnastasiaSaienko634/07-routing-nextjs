@@ -7,15 +7,15 @@ import {
   QueryClient,
 } from "@tanstack/react-query";
 interface NotesDetailsProps {
-  params: Promise<{ id: string }>;
+  params: Promise<{ noteId: string }>;
 }
 
 const Modal = async ({ params }: NotesDetailsProps) => {
-  const { id } = await params;
+  const { noteId } = await params;
   const queryClient = new QueryClient();
   await queryClient.prefetchQuery({
-    queryKey: ["note", id],
-    queryFn: () => fetchNoteById(id),
+    queryKey: ["note", noteId],
+    queryFn: () => fetchNoteById(noteId),
   });
   return (
     <div>
