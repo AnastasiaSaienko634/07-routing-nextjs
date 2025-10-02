@@ -1,6 +1,6 @@
 import React from "react";
 import { fetchNoteById } from "@/lib/api";
-import NotePreview from "@/app/notes/[id]/NotePreview.client";
+import NotePreview from "@/app/@modal/(.)notes/[id]/NotePreview.client";
 import {
   dehydrate,
   HydrationBoundary,
