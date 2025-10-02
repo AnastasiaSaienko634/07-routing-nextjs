@@ -9,11 +9,11 @@ import { useRouter } from "next/navigation";
 import Modal from "../Modal/Modal";
 const NotePreview = () => {
   const router = useRouter();
-  const { noteId } = useParams<{ noteId: string }>();
-  console.log(noteId);
+  const { id } = useParams<{ id: string }>();
+  console.log(id);
   const { data, isLoading, isError } = useQuery({
-    queryKey: ["note", noteId],
-    queryFn: () => fetchNoteById(noteId),
+    queryKey: ["note", id],
+    queryFn: () => fetchNoteById(id),
     refetchOnMount: false,
   });
 
